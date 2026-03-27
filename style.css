@@ -1,0 +1,235 @@
+@import url('https://fonts.googleapis.com/css2?family=Lobster&family=Momo+Signature&display=swap');
+
+body {
+  background-color: #FF8DA1;
+  height: 100vh;
+  margin: 0;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+/* CONTEÚDO */
+.conteudo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* ================= TEXTO ================= */
+
+h1 {
+  color: red;
+  font-size: 42px;
+  font-family: "Lobster", sans-serif;
+
+  opacity: 0;
+  transform: translateY(20px);
+  animation: aparecer 1s ease forwards 1s;
+}
+
+p {
+  color: white;
+  opacity: 0.9;
+  max-width: 300px;
+  font-family: "Momo Signature", cursive;
+
+  opacity: 0;
+  transform: translateY(20px);
+  animation: aparecer 1s ease forwards 1.5s;
+}
+
+/* ================= BOTÃO E ANIMACÃO================= */
+
+button {
+  margin-top: 20px;
+  padding: 12px 25px;
+
+  background-color: transparent;
+  border: 2px solid white;
+  color: white;
+
+  border-radius: 10px;
+  cursor: pointer;
+
+  position: relative;
+  overflow: hidden;
+
+  transition: 0.3s;
+}
+
+/* HOVER (quando passa o dedo/mouse) */
+button:hover {
+  background-color: white;
+  color: #FF8DA1;
+  transform: scale(1.05);
+}
+
+/* CLIQUE (efeito pressionado) */
+button:active {
+  transform: scale(0.95);
+}
+
+/* BRILHO PASSANDO */
+button::before {
+  content: "";
+  position: absolute;
+  width: 50px;
+  height: 100%;
+  background: rgba(255,255,255,0.5);
+
+  left: -60px;
+  top: 0;
+
+  transform: skewX(-20deg);
+  transition: 0.5s;
+}
+
+/* ANIMAÇÃO DO BRILHO */
+button:hover::before {
+  left: 120%;
+}
+
+/* ================= BOLO ================= */
+
+.cake {
+  position: relative;
+  margin-bottom: 30px;
+
+  filter: drop-shadow(0 10px 10px rgba(0,0,0,0.2));
+
+  animation: entrar 0.8s ease-out forwards,
+             bounce 0.4s ease-out 0.8s,
+             float 2s ease-in-out infinite 1.2s;
+}
+
+.top, .middle, .bottom {
+  width: 140px;
+  height: 35px;
+  border-radius: 10px;
+  margin: 0 auto;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.2);
+}
+
+/* TOPO */
+.top {
+  background: linear-gradient(to bottom, #ffffff, #eaeaea);
+  position: relative;
+  overflow: hidden;
+}
+
+.top::before {
+  content: "";
+  position: absolute;
+  width: 40px;
+  height: 100%;
+  background: rgba(255,255,255,0.5);
+  left: -50px;
+  transform: skewX(-20deg);
+  animation: brilho 3s infinite;
+}
+
+.top::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 12px;
+  background: #3b1f08;
+  top: 100%;
+  border-radius: 0 0 10px 10px;
+}
+
+/* CHOCOLATE */
+.middle {
+  background: #5a2d0c;
+  margin-top: 8px;
+}
+
+.bottom {
+  background: #2b1406;
+  margin-top: 8px;
+  width: 150px;
+}
+
+/* ================= VELA ================= */
+
+.vela {
+  width: 6px;
+  height: 20px;
+  background: white;
+  position: absolute;
+  top: -25px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.vela::after {
+  content: "";
+  width: 10px;
+  height: 10px;
+  background: radial-gradient(circle, yellow, orange, red);
+  position: absolute;
+  top: -10px;
+  left: -2px;
+  border-radius: 50%;
+  animation: flame 0.4s infinite alternate;
+}
+
+/* ================= CONFETE ================= */
+
+.confetti-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.confetti {
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  opacity: 0.8;
+  animation: fall linear forwards;
+}
+
+/* ================= ANIMAÇÕES ================= */
+
+@keyframes flame {
+  from { transform: scale(1); }
+  to { transform: scale(1.3); }
+}
+
+@keyframes brilho {
+  0% { left: -50px; }
+  100% { left: 150%; }
+}
+
+@keyframes entrar {
+  from { opacity: 0; transform: translateY(80px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes bounce {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+  100% { transform: translateY(0); }
+}
+
+@keyframes float {
+  0%,100% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
+}
+
+@keyframes aparecer {
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fall {
+  to {
+    transform: translateY(100vh) rotate(360deg);
+  }
+}
