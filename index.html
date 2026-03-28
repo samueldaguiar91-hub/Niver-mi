@@ -26,8 +26,9 @@
     <div class="top"></div>
     <div class="middle"></div>
     <div class="bottom"></div>
+
     <div class="vela">
-  <div class="fogo"></div>
+      <div class="fogo"></div>
     </div>
   </div>
 
@@ -44,34 +45,7 @@
   <source src="audio/musica.mp3" type="audio/mpeg">
 </audio>
 
-<script>
-function entrar() {
-  const senha = "1234";
-  const input = document.getElementById("senha").value;
-
-  if (input === senha) {
-    const login = document.getElementById("login");
-    const conteudo = document.getElementById("conteudo");
-
-    login.style.opacity = "0";
-
-    setTimeout(() => {
-      login.style.display = "none";
-      conteudo.style.display = "flex";
-
-      setTimeout(() => {
-        conteudo.style.opacity = "1";
-      }, 50);
-
-      document.getElementById("musica").play();
-    }, 500);
-
-  } else {
-    document.getElementById("erro").innerText = "Senha errada";
-  }
-}
-</script>
-
+<!-- SÓ ISSO DE SCRIPT -->
 <script src="script.js"></script>
 
 </body>
