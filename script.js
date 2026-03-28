@@ -40,7 +40,7 @@ function explodir() {
   musica.play();
 }
 
-// 🔒 login com animação
+// 🔒 login
 function entrar() {
   const senha = "1234";
   const input = document.getElementById("senha").value;
@@ -55,12 +55,9 @@ function entrar() {
     setTimeout(() => {
       login.style.display = "none";
 
-      // ativa conteúdo
+      // mostra conteúdo corretamente
       conteudo.classList.add("ativo");
-
-      setTimeout(() => {
-        conteudo.style.opacity = "1";
-      }, 50);
+      conteudo.style.opacity = "1"; // 🔥 resolve o bug do bolo
 
       // ativa confete
       ativo = true;
