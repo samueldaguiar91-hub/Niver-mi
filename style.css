@@ -104,7 +104,9 @@ p {
   margin-bottom: 30px;
   transform: scale(1.6);
   position: relative; /* 👈 isso faz a vela aparecer no lugar certo */
-  }
+  opacity: 1; /* 🔥 garante que o bolo aparece */
+  
+}
 
 .top, .middle, .bottom {
   width: 140px;
