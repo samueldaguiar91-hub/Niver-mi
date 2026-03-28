@@ -118,7 +118,6 @@ p {
 .bottom { background: #2b1406; margin-top: 8px; }
 
 /* Vela*/
-
 .vela {
   width: 6px;
   height: 20px;
@@ -127,10 +126,11 @@ p {
   top: -25px;
   left: 50%;
   transform: translateX(-50%);
+  border-radius: 2px;
 }
 
-.vela::after {
-  content: "";
+/* CHAMA */
+.fogo {
   width: 10px;
   height: 10px;
   background: radial-gradient(circle, yellow, orange, red);
@@ -138,12 +138,13 @@ p {
   top: -10px;
   left: -2px;
   border-radius: 50%;
-  animation: flame 0.4s infinite alternate;
+  animation: flame 0.3s infinite alternate;
 }
 
+/* ANIMAÇÃO */
 @keyframes flame {
-  from { transform: scale(1); }
-  to { transform: scale(1.3); }
+  from { transform: scale(1) rotate(-2deg); }
+  to { transform: scale(1.3) rotate(2deg); }
 }
 
 /* ANIMAÇÃO */
