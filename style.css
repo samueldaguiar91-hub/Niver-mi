@@ -9,6 +9,8 @@ body {
   justify-content: center;
   align-items: center;
   text-align: center;
+
+  font-size: 18px;
 }
 
 /* CONTEÚDO */
@@ -22,7 +24,7 @@ body {
 
 h1 {
   color: red;
-  font-size: 42px;
+  font-size: clamp(28px, 8vw, 42px);
   font-family: "Lobster", sans-serif;
 
   opacity: 0;
@@ -32,7 +34,6 @@ h1 {
 
 p {
   color: white;
-  opacity: 0.9;
   max-width: 300px;
   font-family: "Momo Signature", cursive;
 
@@ -41,7 +42,7 @@ p {
   animation: aparecer 1s ease forwards 1.5s;
 }
 
-/* ================= BOTÃO E ANIMACÃO================= */
+/* ================= BOTÃO ================= */
 
 button {
   margin-top: 20px;
@@ -60,19 +61,16 @@ button {
   transition: 0.3s;
 }
 
-/* HOVER (quando passa o dedo/mouse) */
 button:hover {
   background-color: white;
   color: #FF8DA1;
   transform: scale(1.05);
 }
 
-/* CLIQUE (efeito pressionado) */
 button:active {
   transform: scale(0.95);
 }
 
-/* BRILHO PASSANDO */
 button::before {
   content: "";
   position: absolute;
@@ -87,7 +85,6 @@ button::before {
   transition: 0.5s;
 }
 
-/* ANIMAÇÃO DO BRILHO */
 button:hover::before {
   left: 120%;
 }
@@ -99,6 +96,8 @@ button:hover::before {
   margin-bottom: 30px;
 
   filter: drop-shadow(0 10px 10px rgba(0,0,0,0.2));
+
+  transform: scale(1.6); /* 🔥 AUMENTA NO CELULAR */
 
   animation: entrar 0.8s ease-out forwards,
              bounce 0.4s ease-out 0.8s,
@@ -113,7 +112,6 @@ button:hover::before {
   box-shadow: 0 3px 6px rgba(0,0,0,0.2);
 }
 
-/* TOPO */
 .top {
   background: linear-gradient(to bottom, #ffffff, #eaeaea);
   position: relative;
@@ -141,7 +139,6 @@ button:hover::before {
   border-radius: 0 0 10px 10px;
 }
 
-/* CHOCOLATE */
 .middle {
   background: #5a2d0c;
   margin-top: 8px;
