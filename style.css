@@ -74,6 +74,10 @@ button:hover {
   transition: 0.5s;
 }
 
+#conteudo.ativo {
+  display: flex;
+}
+
 /* TEXTO */
 h1 {
   color: red;
