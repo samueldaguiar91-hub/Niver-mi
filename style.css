@@ -99,6 +99,13 @@ p {
   animation: aparecer 1s ease forwards 1.5s;
 }
 
+#conteudo.ativo h1,
+#conteudo.ativo p {
+  opacity: 1;
+  transform: translateY(0);
+  animation: none;
+}
+
 /* BOLO */
 .cake {
   margin-bottom: 30px;
