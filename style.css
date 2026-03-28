@@ -79,25 +79,7 @@ button:hover {
 }
 
 /* TEXTO */
-h1 {
-  color: red;
-  font-size: clamp(28px, 8vw, 42px);
-  font-family: "Lobster", sans-serif;
 
-  opacity: 0;
-  transform: translateY(20px);
-  animation: aparecer 1s ease forwards 1s;
-}
-
-p {
-  color: white;
-  max-width: 300px;
-  font-family: "Momo Signature", cursive;
-
-  opacity: 0;
-  transform: translateY(20px);
-  animation: aparecer 1s ease forwards 1.5s;
-}
 
 #conteudo.ativo h1,
 #conteudo.ativo p {
