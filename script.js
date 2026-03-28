@@ -31,16 +31,16 @@ function createConfetti(qtd = 1) {
 // 🎊 confete contínuo
 setInterval(() => createConfetti(2), 200);
 
-// 💥 explosão no botão
+// 💥 explosão
 function explodir() {
-  createConfetti(120);
+  createConfetti(150);
 
   const musica = document.getElementById("musica");
   musica.currentTime = 0;
   musica.play();
 }
 
-// 🔒 login
+// 🔒 login com animação
 function entrar() {
   const senha = "1234";
   const input = document.getElementById("senha").value;
@@ -49,18 +49,26 @@ function entrar() {
     const login = document.getElementById("login");
     const conteudo = document.getElementById("conteudo");
 
-    // remove login
-    login.style.display = "none";
+    // fade do login
+    login.style.opacity = "0";
 
-    // mostra conteúdo sem quebrar layout
-    conteudo.classList.add("ativo");
+    setTimeout(() => {
+      login.style.display = "none";
 
-    // ativa confete
-    ativo = true;
+      // ativa conteúdo
+      conteudo.classList.add("ativo");
 
-    // toca música
-    const musica = document.getElementById("musica");
-    musica.play();
+      setTimeout(() => {
+        conteudo.style.opacity = "1";
+      }, 50);
+
+      // ativa confete
+      ativo = true;
+
+      // toca música
+      document.getElementById("musica").play();
+
+    }, 500);
 
   } else {
     document.getElementById("erro").innerText = "Senha errada 😈";
