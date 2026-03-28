@@ -20,6 +20,13 @@ body {
   align-items: center;
 }
 
+/* ================= SENHA ================= */
+
+#conteudo {
+  display: none;
+}
+
+
 /* ================= TEXTO ================= */
 
 h1 {
