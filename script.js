@@ -52,10 +52,17 @@ function entrar() {
     // remove login
     login.style.display = "none";
 
-    // mostra conteúdo corretamente (sem quebrar layout)
+    // mostra conteúdo sem quebrar layout
     conteudo.classList.add("ativo");
 
     // ativa confete
     ativo = true;
 
     // toca música
+    const musica = document.getElementById("musica");
+    musica.play();
+
+  } else {
+    document.getElementById("erro").innerText = "Senha errada 😈";
+  }
+}
