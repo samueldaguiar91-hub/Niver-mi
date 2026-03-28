@@ -38,3 +38,81 @@ body {
 }
 
 input {
+  width: 100%;
+  padding: 10px;
+  margin-top: 10px;
+  border: none;
+  border-radius: 8px;
+}
+
+button {
+  margin-top: 20px;
+  padding: 12px 25px;
+
+  background-color: transparent;
+  border: 2px solid white;
+  color: white;
+
+  border-radius: 10px;
+  cursor: pointer;
+
+  transition: 0.3s;
+}
+
+button:hover {
+  background-color: white;
+  color: #FF8DA1;
+  transform: scale(1.05);
+}
+
+/* CONTEÚDO */
+#conteudo {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  opacity: 0;
+  transition: 0.5s;
+}
+
+/* TEXTO */
+h1 {
+  color: red;
+  font-size: clamp(28px, 8vw, 42px);
+  font-family: "Lobster", sans-serif;
+
+  opacity: 0;
+  transform: translateY(20px);
+  animation: aparecer 1s ease forwards 1s;
+}
+
+p {
+  color: white;
+  max-width: 300px;
+  font-family: "Momo Signature", cursive;
+
+  opacity: 0;
+  transform: translateY(20px);
+  animation: aparecer 1s ease forwards 1.5s;
+}
+
+/* BOLO */
+.cake {
+  margin-bottom: 30px;
+  transform: scale(1.6);
+}
+
+.top, .middle, .bottom {
+  width: 140px;
+  height: 35px;
+  border-radius: 10px;
+  margin: 0 auto;
+}
+
+.top { background: #fff; }
+.middle { background: #5a2d0c; margin-top: 8px; }
+.bottom { background: #2b1406; margin-top: 8px; }
+
+/* ANIMAÇÃO */
+@keyframes aparecer {
+  to { opacity: 1; transform: translateY(0); }
+}
