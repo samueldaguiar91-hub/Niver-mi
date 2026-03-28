@@ -2,8 +2,9 @@ const container = document.querySelector(".confetti-container");
 
 const colors = ["red", "yellow", "blue", "green", "pink"];
 
-let ativo = false; // controla quando pode soltar confete
+let ativo = false;
 
+// 🎉 cria confete
 function createConfetti(qtd = 1) {
   if (!ativo) return;
 
@@ -27,10 +28,10 @@ function createConfetti(qtd = 1) {
   }
 }
 
-// confete contínuo
+// 🎊 confete contínuo
 setInterval(() => createConfetti(2), 200);
 
-// explosão ao clicar
+// 💥 explosão no botão
 function explodir() {
   createConfetti(120);
 
@@ -39,7 +40,7 @@ function explodir() {
   musica.play();
 }
 
-// 🔥 FUNÇÃO DE LOGIN (AGORA CERTA)
+// 🔒 login
 function entrar() {
   const senha = "1234";
   const input = document.getElementById("senha").value;
@@ -48,7 +49,13 @@ function entrar() {
     const login = document.getElementById("login");
     const conteudo = document.getElementById("conteudo");
 
-    // remove tela de login
+    // remove login
     login.style.display = "none";
 
-    // mostra o site
+    // mostra conteúdo corretamente (sem quebrar layout)
+    conteudo.classList.add("ativo");
+
+    // ativa confete
+    ativo = true;
+
+    // toca música
