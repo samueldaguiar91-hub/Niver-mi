@@ -42,7 +42,7 @@ function explodir() {
 
 // 🔒 login
 function entrar() {
-  const senha = "1234";
+  const senha = "2409";
   const input = document.getElementById("senha").value;
 
   if (input === senha) {
