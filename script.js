@@ -31,18 +31,21 @@ function createConfetti(qtd = 1) {
 // 🎊 confete contínuo
 setInterval(() => createConfetti(2), 200);
 
-// 💥 explosão
+// 💥 explosão (SEM reiniciar música)
 function explodir() {
   createConfetti(150);
 
   const musica = document.getElementById("musica");
-  musica.currentTime = 0;
-  musica.play();
+
+  // só toca se estiver pausada
+  if (musica.paused) {
+    musica.play();
+  }
 }
 
 // 🔒 login
 function entrar() {
-  const senha = "2409";
+  const senha = "Dantas@1";
   const input = document.getElementById("senha").value;
 
   if (input === senha) {
@@ -57,7 +60,7 @@ function entrar() {
 
       // mostra conteúdo corretamente
       conteudo.classList.add("ativo");
-      conteudo.style.opacity = "1"; // 🔥 resolve o bug do bolo
+      conteudo.style.opacity = "1";
 
       // ativa confete
       ativo = true;
