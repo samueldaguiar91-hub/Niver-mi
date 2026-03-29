@@ -45,7 +45,7 @@ function explodir() {
 
 // 🔒 login
 function entrar() {
-  const senha = "Dantas@1";
+  const senha = "Dantaoak@1";
   const input = document.getElementById("senha").value;
 
   if (input === senha) {
